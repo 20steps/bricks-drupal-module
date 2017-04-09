@@ -5,7 +5,8 @@
   "homepage": "https://github.com/20steps/drupal-bricks-bridge",
   "type": "drupal-module",
   "require": {
-    "php": ">=7.0"
+    "php": ">=7.0",
+    "composer/installers": "~1.0"
   },
   "bin": [  ],
   "autoload": {
