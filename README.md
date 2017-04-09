@@ -9,7 +9,7 @@ Configuration
 Edit the settings.php file and the following lines :
 
 ```php
-    $conf['symfony2'] = array(
+    $conf['bricks'] = array(
         'root'  => __DIR__.'/../..', // the project root path
         'drush' => array(
             'env' => 'app',
