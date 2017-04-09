@@ -1,0 +1,13 @@
+{
+  "name": "20steps/drupal-bricks-bridge",
+  "description": "Drupal 7.x module bridging to Bricks by 20steps including Symfony 3",
+  "license": "GPL-2.0",
+  "homepage": "https://github.com/20steps/drupal-bricks-bridge",
+  "require": {
+    "php": ">=7.0"
+  },
+  "bin": [  ],
+  "autoload": {
+    "files": [ ]
+  }
+}

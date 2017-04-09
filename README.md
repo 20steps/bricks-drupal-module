@@ -1,6 +1,6 @@
-This Drupal module is a bridge to Bricks by 20steps including Symfony 3.
+This Drupal 7.x module is a bridge to Bricks by 20steps including Symfony 3.
 
-This Drupal module is used with the Bricks by 20steps Drupal 7.x edition.
+This module is used with the Bricks by 20steps Drupal 7.x edition.
 
 See https://20steps.de for more information
 
