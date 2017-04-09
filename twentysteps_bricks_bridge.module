@@ -22,7 +22,8 @@ function symfony_boot($mode)
 
   if (!$container && PHP_SAPI === 'cli' && $mode == 'drush') {
     if (!isset($conf['bricks']['kernel_factory'])) {
-      require_once sprintf('%s/%s/bootstrap.php.cache', $conf['bricks']['root'], 'app');
+      include_once sprintf('%s/%s/bootstrap.php.cache', $conf['bricks']['root'], 'var');
+      require_once sprintf('%s/%s/autoload.php', $conf['bricks']['root'], 'app');
       require_once sprintf('%s/%s/AppKernel.php', $conf['bricks']['root'], 'app');
 
       $kernelName = 'AppKernel';
