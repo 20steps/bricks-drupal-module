@@ -1,20 +1,20 @@
 <?php
-
-/*
- * This file is part of the Ekino Drupal package.
- *
- * (c) 2011 Ekino
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+	
+	/*
+	 * This file is part of the 20steps Bricks module.
+	 *
+	 * (c) 2017 20steps
+	 *
+	 * For the full copyright and license information, please view the LICENSE
+	 * file that was distributed with this source code.
+	 */
 
 /**
  * @param $edit
  * @param $account
  * @return void
  */
-function ekino_drupal_symfony2_user_login(&$edit, $account)
+function twentysteps_bricks_bridge_user_login(&$edit, $account)
 {
     $event = new \Ekino\Bundle\DrupalBundle\Event\DrupalEvent();
     $event
@@ -29,7 +29,7 @@ function ekino_drupal_symfony2_user_login(&$edit, $account)
  * @param $account
  * @return void
  */
-function ekino_drupal_symfony2_user_logout($account)
+function twentysteps_bricks_bridge_user_logout($account)
 {
     $event = new \Ekino\Bundle\DrupalBundle\Event\DrupalEvent();
     $event->addParameter($account);
@@ -42,7 +42,7 @@ function ekino_drupal_symfony2_user_logout($account)
  * @param $type
  * @return void
  */
-function ekino_drupal_symfony2_entity_load(&$users, $type)
+function twentysteps_bricks_bridge_entity_load(&$users, $type)
 {
     if ($type !== 'user') {
         return;
@@ -59,7 +59,7 @@ function ekino_drupal_symfony2_entity_load(&$users, $type)
  * @param $type
  * @return void
  */
-function ekino_drupal_symfony2_entity_insert($user, $type)
+function twentysteps_bricks_bridge_entity_insert($user, $type)
 {
     if ($type !== 'user') {
         return;
@@ -76,7 +76,7 @@ function ekino_drupal_symfony2_entity_insert($user, $type)
  * @param $type
  * @return void
  */
-function ekino_drupal_symfony2_entity_update($user, $type)
+function twentysteps_bricks_bridge_entity_update($user, $type)
 {
     if ($type !== 'user') {
         return;
@@ -93,7 +93,7 @@ function ekino_drupal_symfony2_entity_update($user, $type)
  * @param $type
  * @return void
  */
-function ekino_drupal_symfony2_entity_presave($user, $type)
+function twentysteps_bricks_bridge_entity_presave($user, $type)
 {
     if ($type !== 'user') {
         return;

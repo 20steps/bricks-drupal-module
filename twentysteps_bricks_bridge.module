@@ -1,45 +1,45 @@
 <?php
 
 /*
- * This file is part of the Ekino Drupal package.
+ * This file is part of the 20steps Bricks module.
  *
- * (c) 2011 Ekino
+ * (c) 2017 20steps
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 if (PHP_SAPI === 'cli' && !defined('EKINO_DRUSH_FROM')) {
-  ekino_drupal_symfony_start('drush');
+	symfony_boot('drush');
 }
 
 /**
  * @param string $mode
  * @return void
  */
-function ekino_drupal_symfony_start($mode)
+function symfony_boot($mode)
 {
   global $container, $conf;
 
   if (!$container && PHP_SAPI === 'cli' && $mode == 'drush') {
-    if (!isset($conf['symfony2']['kernel_factory'])) {
-      require_once sprintf('%s/%s/bootstrap.php.cache', $conf['symfony2']['root'], 'app');
-      require_once sprintf('%s/%s/AppKernel.php', $conf['symfony2']['root'], 'app');
+    if (!isset($conf['bricks']['kernel_factory'])) {
+      require_once sprintf('%s/%s/bootstrap.php.cache', $conf['bricks']['root'], 'app');
+      require_once sprintf('%s/%s/AppKernel.php', $conf['bricks']['root'], 'app');
 
       $kernelName = 'AppKernel';
     } else {
-      $kernelName = $conf['symfony2']['kernel_factory']($conf);
+      $kernelName = $conf['bricks']['kernel_factory']($conf);
     }
 
-    echo "[Symfony2] Booting Kernel ";
+    echo "[Bricks] Booting Kernel ";
 
     $content = ob_get_flush();
-    $kernel = new $kernelName($conf['symfony2'][$mode]['env'], $conf['symfony2'][$mode]['debug']);
+    $kernel = new $kernelName($conf['bricks'][$mode]['env'], $conf['bricks'][$mode]['debug']);
     $kernel->loadClassCache();
     $kernel->boot();
 
     echo " ... ok! \n";
 
-    echo "[Symfony2] Loading container ";
+    echo "[Bricks] Loading container ";
     $container = $kernel->getContainer();
 
     echo " ... ok! \n";
@@ -71,6 +71,6 @@ function symfony_service($name)
   return symfony_container()->get($name);
 }
 
-require_once __DIR__.'/ekino_drupal_symfony2_event.inc';
-require_once __DIR__.'/ekino_drupal_symfony2_user_hook.inc';
-require_once __DIR__.'/ekino_drupal_symfony2_schema.inc';
+require_once __DIR__.'/twentysteps_bricks_bridge_event.inc';
+require_once __DIR__.'/twentysteps_bricks_bridge_user_hook.inc';
+require_once __DIR__.'/twentysteps_bricks_bridge_schema.inc';

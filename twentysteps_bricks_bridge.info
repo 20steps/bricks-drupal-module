@@ -1,0 +1,5 @@
+name = 20steps Bricks Bridge
+description = Bridge between Bricks by 20steps and Drupal 7.x
+package = Symfony3
+core = 7.x
+files[] = twentysteps_bricks_bridge.module

@@ -1,8 +1,8 @@
-This module is a bridge between Symfony2 and Drupal.
+This Drupal module is a bridge to Bricks by 20steps including Symfony 3.
 
-The module must be used with a Symfony2 project including the EkinoDrupalBundle and the FOSUserBundle.
+This Drupal module is used with the Bricks by 20steps Drupal 7.x edition.
 
-See https://github.com/ekino/EkinoDrupalBundle for more information
+See https://20steps.de for more information
 
 Configuration
 -------------
